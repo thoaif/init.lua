@@ -1,71 +1,40 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+require("lazy").setup({
+  -- finder / grep
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim' }
+  },
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
- 
-  -- Fuzzy finder
-  use {
-    'nvim-telescope/telescope.nvim', 
-    tag = '0.1.4',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  -- color scheme
+  { 'rose-pine/neovim', name = 'rose-pine', lazy = false, priority = 1000 },
 
-  -- Color Scheme
-  use({ 'nanotech/jellybeans.vim' })
-
-  -- tree sitter:
-  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
-
-  use({ 'airblade/vim-gitgutter' })
-
-  use({ 'tpope/vim-fugitive' })
-
-  use({ 'tpope/vim-commentary' })
-
-  use({ 'williamboman/mason.nvim' })
-
-  use({ 'williamboman/mason-lspconfig.nvim' })
-
-  use 'neovim/nvim-lspconfig'
-  use 'simrat39/rust-tools.nvim'
-
--- Debugging
-  use 'nvim-lua/plenary.nvim'
-  use 'mfussenegger/nvim-dap'
+  -- Git support
+  { 'tpope/vim-fugitive' },
   
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    requires = {
-      --- Uncomment these if you want to manage LSP servers from neovim
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
-  
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'L3MON4D3/LuaSnip'},
-    }
-  }
+  -- LSP support
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+  {'williamboman/mason.nvim'},
+  {'williamboman/mason-lspconfig.nvim'},
+  {'neovim/nvim-lspconfig'},
+  {'hrsh7th/cmp-nvim-lsp'},
+  {'hrsh7th/nvim-cmp'},
+  {'L3MON4D3/LuaSnip'},
 
-  use({'lukas-reineke/lsp-format.nvim'})
+  -- floating context at the top
+  {'nvim-treesitter/nvim-treesitter-context'},
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+  {'nvim-treesitter/nvim-treesitter'}
+})
+

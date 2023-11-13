@@ -1,13 +1,8 @@
 
 local lsp = require('lsp-zero')
 
-require("lsp-format").setup {}
-require("lspconfig").gopls.setup { on_attach = require("lsp-format").on_attach }
-
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
-
-
 end)
 
 require('mason').setup({})
@@ -23,7 +18,7 @@ require('mason-lspconfig').setup({
 vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
 
 
-lsp.preset('recommended')
+-- lsp.preset('recommended')
 
 
 -- keymaps to add only on buffers with LSP support (overriding grep/tags based defaults)

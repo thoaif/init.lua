@@ -1,3 +1,4 @@
+vim.opt.tags = '.tags'
 
 -- use spaces for tabs
 vim.opt.tabstop = 2
