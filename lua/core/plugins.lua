@@ -22,7 +22,15 @@ require("lazy").setup({
 
   -- Git support
   { 'tpope/vim-fugitive' },
-  
+
+  -- comments
+  { 'tpope/vim-commentary' },
+
+  -- Git good
+  { 'ThePrimeagen/vim-be-good' },
+
+  { 'ggandor/leap.nvim' },
+
   -- LSP support
   {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   {'williamboman/mason.nvim'},
