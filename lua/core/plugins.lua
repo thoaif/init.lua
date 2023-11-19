@@ -31,6 +31,15 @@ require("lazy").setup({
 
   { 'ggandor/leap.nvim' },
 
+  -- ChatGpitty
+  {
+    "dpayne/CodeGPT.nvim",
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+    }
+  },
+
   -- LSP support
   {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   {'williamboman/mason.nvim'},
