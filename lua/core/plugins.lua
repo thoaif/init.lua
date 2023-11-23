@@ -33,13 +33,18 @@ require("lazy").setup({
 
   -- ChatGpitty
   {
-    "dpayne/CodeGPT.nvim",
+    'dpayne/CodeGPT.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
     }
   },
 
+  -- Copilot
+  -- { 'github/copilot.vim' },
+  { 'zbirenbaum/copilot.lua' },
+  { 'zbirenbaum/copilot-cmp' },
+  
   -- LSP support
   {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   {'williamboman/mason.nvim'},
@@ -48,6 +53,7 @@ require("lazy").setup({
   {'hrsh7th/cmp-nvim-lsp'},
   {'hrsh7th/nvim-cmp'},
   {'L3MON4D3/LuaSnip'},
+  {'onsails/lspkind.nvim'},
 
   -- floating context at the top
   {'nvim-treesitter/nvim-treesitter-context'},
