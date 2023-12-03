@@ -22,6 +22,7 @@ require("lazy").setup({
 
   -- Git support
   { 'tpope/vim-fugitive' },
+  { 'lewis6991/gitsigns.nvim' },
 
   -- comments
   { 'tpope/vim-commentary' },
