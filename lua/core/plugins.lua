@@ -18,7 +18,7 @@ require("lazy").setup({
   },
 
   -- color scheme
-  { 'rose-pine/neovim', name = 'rose-pine', lazy = false, priority = 1000 },
+  { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
 
   -- Git support
   { 'tpope/vim-fugitive' },
@@ -44,20 +44,22 @@ require("lazy").setup({
   -- { 'github/copilot.vim' },
   { 'zbirenbaum/copilot.lua' },
   { 'zbirenbaum/copilot-cmp' },
-  
+
   -- LSP support
-  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-  {'williamboman/mason.nvim'},
-  {'williamboman/mason-lspconfig.nvim'},
-  {'neovim/nvim-lspconfig'},
-  {'hrsh7th/cmp-nvim-lsp'},
-  {'hrsh7th/nvim-cmp'},
-  {'L3MON4D3/LuaSnip'},
-  {'onsails/lspkind.nvim'},
+  { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
+  { 'neovim/nvim-lspconfig' },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/nvim-cmp' },
+  { 'L3MON4D3/LuaSnip' },
+  { 'onsails/lspkind.nvim' },
 
   -- floating context at the top
-  {'nvim-treesitter/nvim-treesitter-context'},
+  { 'nvim-treesitter/nvim-treesitter-context' },
 
-  {'nvim-treesitter/nvim-treesitter'}
+  { 'nvim-treesitter/nvim-treesitter' },
+
+  -- tmux support
+  { 'alexghergh/nvim-tmux-navigation',        lazy = false },
 })
-
