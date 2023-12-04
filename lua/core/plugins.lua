@@ -63,4 +63,15 @@ require("lazy").setup({
 
   -- tmux support
   { 'alexghergh/nvim-tmux-navigation',        lazy = false },
+
+  -- testing support
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim"
+    }
+  },
+  { 'haydenmeade/neotest-jest' },
+
 })
