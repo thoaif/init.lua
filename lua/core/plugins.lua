@@ -46,6 +46,12 @@ require("lazy").setup({
   { 'zbirenbaum/copilot.lua' },
   { 'zbirenbaum/copilot-cmp' },
 
+  -- typescript
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  },
+
   -- LSP support
   { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
   { 'williamboman/mason.nvim' },
@@ -55,6 +61,8 @@ require("lazy").setup({
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
   { 'onsails/lspkind.nvim' },
+  { "elentok/format-on-save.nvim" },
+
 
   -- floating context at the top
   { 'nvim-treesitter/nvim-treesitter-context' },
