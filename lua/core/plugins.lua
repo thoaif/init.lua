@@ -46,11 +46,13 @@ require("lazy").setup({
   { 'zbirenbaum/copilot.lua' },
   { 'zbirenbaum/copilot-cmp' },
 
+  -- language specific
   -- typescript
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   },
+  { 'haydenmeade/neotest-jest' },
 
   -- LSP support
   { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
@@ -80,6 +82,4 @@ require("lazy").setup({
       "antoinemadec/FixCursorHold.nvim"
     }
   },
-  { 'haydenmeade/neotest-jest' },
-
 })
