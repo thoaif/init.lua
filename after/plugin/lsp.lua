@@ -2,7 +2,7 @@ local lsp = require('lsp-zero')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'rust_analyzer', 'lua_ls', 'bashls' },
+  ensure_installed = { 'rust_analyzer', 'lua_ls', 'bashls', 'jsonls' },
 
   handlers = {
     lsp.default_setup,
@@ -10,8 +10,7 @@ require('mason-lspconfig').setup({
 
     -- lua setup for neovim
     lua_ls = function()
-      require('lspconfig')
-          .lua_ls.setup {
+      require('lspconfig').lua_ls.setup {
         on_init = function(client)
           local path = client.workspace_folders[1].name
           if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
