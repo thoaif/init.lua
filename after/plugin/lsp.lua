@@ -2,7 +2,7 @@ local lsp = require('lsp-zero')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'rust_analyzer', 'lua_ls', 'bashls', 'jsonls' },
+  ensure_installed = { 'rust_analyzer', 'lua_ls', 'bashls', 'jsonls', 'eslint', 'typos_lsp', 'dockerls', 'docker_compose_language_service', 'html', 'mdx_analyzer', 'spectral', 'prismals', 'sqlls', 'yamlls', 'tailwindcss' },
 
   handlers = {
     lsp.default_setup,
