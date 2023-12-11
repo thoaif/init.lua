@@ -65,6 +65,14 @@ require("lazy").setup({
   { 'onsails/lspkind.nvim' },
   { "elentok/format-on-save.nvim" },
 
+  -- refactoring
+  -- {
+  --   "ThePrimeagen/refactoring.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --   },
+  -- },
 
   -- floating context at the top
   { 'nvim-treesitter/nvim-treesitter-context' },
