@@ -47,12 +47,13 @@ require("lazy").setup({
   { 'zbirenbaum/copilot-cmp' },
 
   -- language specific
-  -- typescript
+  -- typescript / js
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   },
   { 'haydenmeade/neotest-jest' },
+  { 'vuki656/package-info.nvim',              dependencies = { "MunifTanjim/nui.nvim" } },
 
   -- LSP support
   { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
