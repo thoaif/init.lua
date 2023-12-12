@@ -30,7 +30,9 @@ require("lazy").setup({
   -- Git good
   { 'ThePrimeagen/vim-be-good' },
 
+  -- navigation
   { 'ggandor/leap.nvim' },
+  { 'ThePrimeagen/harpoon',    branch = "harpoon2", dependencies = { 'nvim-lua/plenary.nvim' } },
 
   -- ChatGpitty
   {
