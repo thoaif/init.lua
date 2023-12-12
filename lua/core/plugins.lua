@@ -60,6 +60,7 @@ require("lazy").setup({
     'simrat39/rust-tools.nvim',
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   },
+  { 'rouge8/neotest-rust' },
 
   -- LSP support
   { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
