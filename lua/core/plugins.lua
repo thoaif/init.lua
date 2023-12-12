@@ -53,7 +53,13 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   },
   { 'haydenmeade/neotest-jest' },
-  { 'vuki656/package-info.nvim',              dependencies = { "MunifTanjim/nui.nvim" } },
+  { 'vuki656/package-info.nvim', dependencies = { "MunifTanjim/nui.nvim" } },
+
+  -- rust
+  {
+    'simrat39/rust-tools.nvim',
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  },
 
   -- LSP support
   { 'VonHeikemen/lsp-zero.nvim',              branch = 'v3.x' },
@@ -91,4 +97,7 @@ require("lazy").setup({
       "antoinemadec/FixCursorHold.nvim"
     }
   },
+
+  -- debugging tools
+  { 'mfussenegger/nvim-dap' }
 })
