@@ -1,6 +1,22 @@
 local format_on_save = require("format-on-save")
 local formatters = require("format-on-save.formatters")
 
+local javascript = {
+  formatters.if_file_exists({
+    pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
+    formatter = formatters.prettierd,
+  }),
+
+  formatters.if_file_exists({
+    pattern = { ".eslintrc.*", ".eslint.*", },
+    formatter = formatters.shell({
+      cmd = { "cat", "%", "|", "eslint_d", "--fix-to-stdout", "--stdin" }
+    })
+  }),
+}
+
+
+
 format_on_save.setup({
   exclude_path_patterns = {
     "/node_modules/",
@@ -9,16 +25,16 @@ format_on_save.setup({
   formatter_by_ft = {
     css = formatters.lsp,
     html = formatters.lsp,
-    javascript = formatters.lsp,
     json = formatters.lsp,
     lua = formatters.lsp,
     markdown = formatters.prettierd,
     rust = formatters.lsp,
     scss = formatters.lsp,
     sh = formatters.shfmt,
-    typescript = formatters.prettierd,
-    typescriptreact = formatters.prettierd,
+    typescript = javascript,
+    typescriptreact = javascript,
     yaml = formatters.lsp,
+    javascript = javascript,
   },
   -- Optional: fallback formatter to use when no formatters match the current filetype
   fallback_formatter = {
