@@ -14,6 +14,11 @@ vim.keymap.set('n', '<Down>', '<Nop>', opts)
 vim.keymap.set('n', '<Left>', '<Nop>', opts)
 vim.keymap.set('n', '<Right>', '<Nop>', opts)
 
+-- remap new panes
+vim.keymap.set('n', '<C-w>h', ':leftabove vsplit<CR>', opts)
+vim.keymap.set('n', '<C-w>l', ':rightbelow vsplit<CR>', opts)
+vim.keymap.set('n', '<C-w>k', ':leftabove split<CR>', opts)
+vim.keymap.set('n', '<C-w>j', ':rightbelow split<CR>', opts)
 
 -- invert 0 and _
 vim.keymap.set('n', '_', '0')
