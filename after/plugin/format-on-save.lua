@@ -3,16 +3,16 @@ local formatters = require("format-on-save.formatters")
 
 local javascript = {
   formatters.if_file_exists({
-    pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
+    pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*", ".prettierignore" },
     formatter = formatters.prettierd,
   }),
 
-  formatters.if_file_exists({
-    pattern = { ".eslintrc.*", ".eslint.*", },
-    formatter = formatters.shell({
-      cmd = { "cat", "%", "|", "eslint_d", "--fix-to-stdout", "--stdin" }
-    })
-  }),
+  -- formatters.if_file_exists({
+  --   pattern = { ".eslintrc.*", ".eslint.*", },
+  --   formatter = formatters.shell({
+  --     cmd = { "cat", "%", "|", "eslint_d", "--fix-to-stdout", "--stdin" }
+  --   })
+  -- }),
 }
 
 
