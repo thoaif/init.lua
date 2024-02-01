@@ -6,20 +6,20 @@ cmp.setup({
     { name = 'nvim_lsp' },
   },
   mapping = {
-    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+    ['<A-y>'] = cmp.mapping.confirm({ select = false }),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<Up>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
-    ['<Down>'] = cmp.mapping.select_next_item({behavior = 'select'}),
-    ['<C-p>'] = cmp.mapping(function()
+    ['<Up>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
+    ['<Down>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
+    ['<A-p>'] = cmp.mapping(function()
       if cmp.visible() then
-        cmp.select_prev_item({behavior = 'insert'})
+        cmp.select_prev_item({ behavior = 'insert' })
       else
         cmp.complete()
       end
     end),
-    ['<C-n>'] = cmp.mapping(function()
+    ['<A-n>'] = cmp.mapping(function()
       if cmp.visible() then
-        cmp.select_next_item({behavior = 'insert'})
+        cmp.select_next_item({ behavior = 'insert' })
       else
         cmp.complete()
       end

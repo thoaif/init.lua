@@ -15,10 +15,10 @@ vim.keymap.set('n', '<Left>', '<Nop>', opts)
 vim.keymap.set('n', '<Right>', '<Nop>', opts)
 
 -- remap new panes
-vim.keymap.set('n', '<C-w>h', ':leftabove vsplit<CR>', opts)
-vim.keymap.set('n', '<C-w>l', ':rightbelow vsplit<CR>', opts)
-vim.keymap.set('n', '<C-w>k', ':leftabove split<CR>', opts)
-vim.keymap.set('n', '<C-w>j', ':rightbelow split<CR>', opts)
+vim.keymap.set('n', '<A-w>h', ':leftabove vsplit<CR>', opts)
+vim.keymap.set('n', '<A-w>l', ':rightbelow vsplit<CR>', opts)
+vim.keymap.set('n', '<A-w>k', ':leftabove split<CR>', opts)
+vim.keymap.set('n', '<A-w>j', ':rightbelow split<CR>', opts)
 
 -- invert 0 and _
 vim.keymap.set('n', '_', '0')
@@ -26,17 +26,17 @@ vim.keymap.set('n', '0', '_')
 
 -- Copying to system clipboard
 -- From current cursor position to EOL (normal mode)
-vim.keymap.set({ 'n' }, '<C-y>', '"+y$')
+vim.keymap.set({ 'n' }, '<A-y>', '"+y$')
 -- Current selection (visual ttttr
-vim.keymap.set({ 'v' }, '<C-y>', '"+y')
+vim.keymap.set({ 'v' }, '<A-y>', '"+y')
 
 -- Cutting to system clipboard
 -- From current cursor position to EOL (normal mode)
-vim.keymap.set({ 'n' }, '<C-x>', '"+d$')
+vim.keymap.set({ 'n' }, '<A-x>', '"+d$')
 -- Current selection (visual mode)
-vim.keymap.set({ 'v' }, '<C-x>', '"+d')
+vim.keymap.set({ 'v' }, '<A-x>', '"+d')
 
 
 -- Paste from system clipboard
-vim.keymap.set({ 'n' }, '<C-p>', '"+p')
-vim.keymap.set({ 'v' }, '<C-p>', '"+p')
+vim.keymap.set({ 'n' }, '<A-p>', '"+p')
+vim.keymap.set({ 'v' }, '<A-p>', '"+p')
