@@ -28,6 +28,8 @@ require("lazy").setup({
   -- comments
   { 'tpope/vim-commentary' },
 
+  { "kylechui/nvim-surround" },
+
   -- Git good
   { 'ThePrimeagen/vim-be-good' },
 
