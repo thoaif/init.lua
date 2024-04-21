@@ -11,4 +11,16 @@ function pushToUpstream()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":<C-U>" .. command, true, false, true), 'n', true)
 end
 
-vim.keymap.set('n', '<leader>hp', pushToUpstream, { noremap = true, silent = true })
+function prepareToAmend()
+  local current_branch = vim.fn.systemlist("git branch --show-current")[1]
+  if current_branch == nil or current_branch == '' then
+    print("No current branch found")
+    return
+  end
+  local command = "Git commit --amend --no-edit"
+
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(":<C-U>" .. command, true, false, true), 'n', true)
+end
+
+vim.keymap.set('n', '<leader>hP', pushToUpstream, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>ha', prepareToAmend, { noremap = true, silent = true })
