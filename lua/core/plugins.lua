@@ -44,6 +44,11 @@ require("lazy").setup({
       'MunifTanjim/nui.nvim',
     }
   },
+  {
+    "frankroeder/parrot.nvim",
+    tag = "v0.4.2",
+    dependencies = { 'ibhagwan/fzf-lua', 'nvim-lua/plenary.nvim' },
+  },
 
   -- Copilot
   -- { 'github/copilot.vim' },
